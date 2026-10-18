@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Read the project brief
+    url: https://github.com/akameredon/open-roadster/blob/main/docs/PROJECT_BRIEF.md
+    about: Understand project scope and current concept-stage status.
+  - name: Read the safety policy
+    url: https://github.com/akameredon/open-roadster/blob/main/safety/SAFETY_POLICY.md
+    about: Understand evidence labels and safety boundaries.
