@@ -1,0 +1,43 @@
+name: Engineering research proposal
+description: Propose a sourced, bounded research task for OPEN ROADSTER
+title: "Research: "
+labels: ["research"]
+body:
+  - type: markdown
+    attributes:
+      value: "This is a concept-stage project. Research is not an approved design or construction instruction. Do not post confidential or export-controlled material."
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question
+      description: What specific question should this work answer?
+    validations:
+      required: true
+  - type: textarea
+    id: assumptions
+    attributes:
+      label: Assumptions and scope
+      description: State jurisdiction, mission, boundaries, and assumptions.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Primary sources and evidence
+      description: Link standards, regulator publications, papers, or reproducible data.
+    validations:
+      required: true
+  - type: textarea
+    id: deliverable
+    attributes:
+      label: Proposed deliverable
+      description: What document, comparison, or analysis will be produced?
+    validations:
+      required: true
+  - type: textarea
+    id: limits
+    attributes:
+      label: Uncertainty and review needs
+      description: What remains unknown and what qualified review is needed?
+    validations:
+      required: true
