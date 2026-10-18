@@ -1,7 +1,106 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="OPEN ROADSTER is an open engineering initiative exploring a two-seat roadable aircraft."><meta name="theme-color" content="#080b10"><meta property="og:title" content="OPEN ROADSTER — Built in the Open"><meta property="og:description" content="Help investigate a two-seat roadable aircraft through open engineering."><meta property="og:image" content="assets/open-roadster-concept.svg"><title>OPEN ROADSTER — Built in the Open</title><link rel="stylesheet" href="styles.css"></head><body>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="OPEN ROADSTER is an open engineering initiative exploring a two-seat roadable aircraft."><meta name="theme-color" content="#080b10"><meta property="og:title" content="OPEN ROADSTER — Built in the Open"><meta property="og:description" content="Help investigate a two-seat roadable aircraft through open engineering."><meta property="og:image" content="assets/open-roadster-concept.svg"><title>OPEN ROADSTER — Built in the Open</title><link rel="stylesheet" href="styles.css">
+<style>
+  /* Waitlist form: inherits your page colours; only the accent below is a guess. */
+  .orw { --orw-accent: #4da3ff; --orw-line: rgba(255,255,255,.25); max-width: 480px; margin: 1.5rem 0; color: inherit; }
+  .orw label { display: block; font-size: .9rem; margin: 1rem 0 .35rem; }
+  .orw input[type=email], .orw input[type=text], .orw select {
+    width: 100%; box-sizing: border-box; padding: .8rem; font-size: 16px; /* 16px prevents iOS zoom */
+    background: rgba(255,255,255,.04); color: inherit; border: 1px solid var(--orw-line); border-radius: 8px; font-family: inherit; }
+  .orw select option { color: #111; }
+  .orw input:focus-visible, .orw select:focus-visible, .orw button:focus-visible { outline: 2px solid var(--orw-accent); outline-offset: 2px; }
+  .orw .orw-check { display: flex; gap: .6rem; align-items: flex-start; margin-top: 1rem; font-size: .85rem; opacity: .85; }
+  .orw .orw-check input { margin-top: .2rem; width: 1.1rem; height: 1.1rem; flex: none; }
+  .orw button { width: 100%; margin-top: 1.25rem; padding: .9rem; font: inherit; font-weight: 600; border: 0; border-radius: 8px; cursor: pointer; }
+  .orw button[disabled] { opacity: .6; cursor: wait; }
+  .orw .orw-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .orw .orw-status { margin-top: 1rem; min-height: 1.4em; font-size: .95rem; }
+  .orw .orw-status.ok { color: #6fdc8c; } .orw .orw-status.err { color: #ff8a80; }
+  .orw .orw-note { margin-top: .75rem; font-size: .8rem; opacity: .75; }
+</style></head><body>
 <header><a class="logo" href="#top">OPEN ROADSTER</a><a href="#project">THE PROJECT</a><a href="#roadmap">ROADMAP</a><a class="navcta" href="#waitlist">JOIN THE WAITLIST ↗</a></header>
 <main id="top"><section class="hero"><div><p class="eyebrow">AN OPEN ENGINEERING INITIATIVE</p><h1>THE FUTURE OF FLIGHT.<br><em>BUILT IN THE OPEN.</em></h1><p class="lede">A global community exploring a two-seat roadable aircraft — one open engineering decision at a time.</p><a class="button" href="#waitlist">JOIN THE FOUNDING COMMUNITY</a><p class="note">CONCEPT STAGE · NOT A COMPLETED OR FLIGHT-TESTED AIRCRAFT</p></div><figure class="visual"><img src="assets/open-roadster-concept.svg" alt="Original stylized illustration of a futuristic two-seat roadable aircraft concept"><figcaption>CONCEPT 001 · ORIGINAL ILLUSTRATION · NOT TO SCALE</figcaption></figure></section>
 <section id="project"><p class="eyebrow">THE MISSION</p><h2>Not another closed-door vision.</h2><p class="lede">We are investigating what it would take to combine road transportation and flight in a two-seat vehicle. Requirements, assumptions, research, and decisions will be shared openly so qualified people can challenge and improve the work.</p><div class="cards"><article><b>01</b><h3>Open by design</h3><p>Public research, documented decisions, and a contribution process people can inspect.</p></article><article><b>02</b><h3>Evidence over hype</h3><p>Concept visuals are not flight tests. Every claim must match available evidence.</p></article><article><b>03</b><h3>Safety is a gate</h3><p>Qualified review and a defensible test plan come before physical flight milestones.</p></article></div></section>
 <section class="roadmap" id="roadmap"><p class="eyebrow">THE ROADMAP</p><h2>One decision at a time.</h2><div class="steps"><div><b>01</b><h3>Define</h3><p>Requirements and regulatory research.</p></div><div><b>02</b><h3>Compare</h3><p>Architecture trade study and feasibility review.</p></div><div><b>03</b><h3>Validate</h3><p>Reviewed analysis, hazards, and test planning.</p></div><div><b>04</b><h3>Demonstrate</h3><p>Only if justified by evidence, resources, and safe oversight.</p></div></div></section>
-<section id="waitlist"><p class="eyebrow">JOIN THE FOUNDING COMMUNITY</p><h2>Help shape what comes next.</h2><p class="lede">We are preparing the signup service. Until the verified waitlist is connected, use GitHub to follow the project or volunteer for a research issue.</p><div class="waitlist-actions"><a class="button" href="https://github.com/akameredon/open-roadster/issues">EXPLORE RESEARCH ISSUES ↗</a><a class="button secondary" href="https://github.com/akameredon/open-roadster">STAR / FOLLOW ON GITHUB ↗</a></div><p id="form-message" aria-live="polite">Email signup is not live yet. We will publish the form here once submissions and privacy controls are tested.</p><p><a href="privacy.html">Interim privacy notice</a></p></section></main><footer><a class="logo" href="#top">OPEN ROADSTER</a><p>Concept-stage open engineering project. No aircraft capability, road legality, performance, or certification is claimed.</p><p>Project name is provisional; trademark availability has not been checked.</p></footer></body></html>
+<section id="waitlist"><p class="eyebrow">JOIN THE FOUNDING COMMUNITY</p><h2>Help shape what comes next.</h2><p class="lede">Join the waitlist for project updates, or go straight to GitHub to follow the work and volunteer for a research issue.</p>
+
+<form class="orw" id="orw-form" novalidate>
+  <label for="orw-email">Email address *</label>
+  <input id="orw-email" name="email" type="email" inputmode="email" autocomplete="email" required maxlength="254">
+
+  <label for="orw-name">Full name (optional)</label>
+  <input id="orw-name" name="full_name" type="text" autocomplete="name" maxlength="100">
+
+  <label for="orw-interest">Area of interest (optional)</label>
+  <select id="orw-interest" name="interest_type">
+    <option value="">Select…</option>
+    <option>Aerospace engineering</option><option>Mechanical engineering</option>
+    <option>Software</option><option>Electronics</option><option>CAD/design</option>
+    <option>Safety/regulation</option><option>Research</option><option>Community</option>
+    <option>General supporter</option>
+  </select>
+
+  <div class="orw-hp" aria-hidden="true">
+    <label for="orw-website">Leave this field empty</label>
+    <input id="orw-website" name="website" type="text" tabindex="-1" autocomplete="off">
+  </div>
+
+  <label class="orw-check" for="orw-consent">
+    <input id="orw-consent" name="consent" type="checkbox" required>
+    <span>I agree to receive OPEN ROADSTER project updates by email and can unsubscribe at any time. *</span>
+  </label>
+
+  <button type="submit" id="orw-btn" class="button">JOIN THE WAITLIST</button>
+  <div class="orw-status" id="orw-status" role="status" aria-live="polite"></div>
+  <p class="orw-note">We'll email a confirmation link first. You're only added after you click it. OPEN ROADSTER is a concept-stage research project, not a product.</p>
+</form>
+
+<div class="waitlist-actions"><a class="button" href="https://github.com/akameredon/open-roadster/issues">EXPLORE RESEARCH ISSUES ↗</a><a class="button secondary" href="https://github.com/akameredon/open-roadster">STAR / FOLLOW ON GITHUB ↗</a></div>
+<p id="form-message" aria-live="polite"></p><p><a href="privacy.html">Privacy notice</a></p></section></main>
+<footer><a class="logo" href="#top">OPEN ROADSTER</a><p>Concept-stage open engineering project. No aircraft capability, road legality, performance, or certification is claimed.</p><p>Project name is provisional; trademark availability has not been checked.</p></footer>
+
+<script>
+(function () {
+  // >>> REPLACE after deploying the Apps Script Web App (URL ends in /exec) <<<
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxhb7jBxkHdn95s-bYylQ_7GYfXGlXouWlElG69CHGocHJSGCtJnqvvFXfy033v7uej/exec';
+
+  var form = document.getElementById('orw-form');
+  var btn = document.getElementById('orw-btn');
+  var statusEl = document.getElementById('orw-status');
+  var busy = false;
+
+  function show(msg, ok) { statusEl.textContent = msg; statusEl.className = 'orw-status ' + (ok ? 'ok' : 'err'); }
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (busy) return;
+    var email = form.email.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { show('Please enter a valid email address.', false); form.email.focus(); return; }
+    if (!form.consent.checked) { show('Please tick the consent box to continue.', false); form.consent.focus(); return; }
+    if (ENDPOINT.indexOf('PASTE_') === 0) { show('Signup is not connected yet. Please check back soon.', false); return; }
+
+    busy = true; btn.disabled = true; btn.textContent = 'SENDING…'; show('Sending…', true);
+    var ctl = new AbortController();
+    var timer = setTimeout(function () { ctl.abort(); }, 20000);
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },  // simple request: no CORS preflight
+      body: JSON.stringify({
+        action: 'signup', email: email, full_name: form.full_name.value,
+        interest_type: form.interest_type.value, consent: true,
+        website: form.website.value, source: 'website'
+      }),
+      signal: ctl.signal
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (d && d.ok) { show(d.message, true); form.reset(); }
+      else { show((d && d.message) || 'Something went wrong. Please try again.', false); }
+    })
+    .catch(function () { show('We could not reach the signup service. Please try again shortly.', false); })
+    .finally(function () { clearTimeout(timer); busy = false; btn.disabled = false; btn.textContent = 'JOIN THE WAITLIST'; });
+  });
+})();
+</script>
+</body></html>
